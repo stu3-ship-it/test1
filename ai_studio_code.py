@@ -16,7 +16,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime, date, timedelta
 from datetime import timezone
-import pytz
+#import pytz
 #import gspread
 #from oauth2client.service_account import ServiceAccountCredentials
 #from googleapiclient.discovery import build
@@ -31,7 +31,7 @@ try:
     # ==========================================
     # 0. 基礎設定與時區
     # ==========================================
-    TW_TZ = pytz.timezone('Asia/Taipei')
+    #TW_TZ = pytz.timezone('Asia/Taipei')
 
     MAX_IMAGE_BYTES = 10 * 1024 * 1024  # 單檔圖片 10MB 上限
     QUEUE_DB_PATH = "task_queue_v4_wal.db"
