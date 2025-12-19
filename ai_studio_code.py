@@ -17,7 +17,6 @@ from email.mime.multipart import MIMEMultipart
 from datetime import datetime, date, timedelta
 from datetime import timezone
 import pytz
-print("test end")
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from googleapiclient.discovery import build
@@ -25,4 +24,7 @@ from googleapiclient.http import MediaIoBaseUpload
 from streamlit.runtime.scriptrunner import add_script_run_ctx
 
 # --- 1. 網頁設定 ---
-st.set_page_config(page_title="抄襲是不對的行為", layout="wide", page_icon="🧹")
+st.set_page_config(page_title="抄襲是不對的行為", layout="wide", page_icon="☘️")
+
+st.error("測試線")
+print(traceback.format_exc())
