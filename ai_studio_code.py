@@ -24,7 +24,7 @@ from googleapiclient.http import MediaIoBaseUpload
 from streamlit.runtime.scriptrunner import add_script_run_ctx
 
 # --- 1. 網頁設定 ---
-st.set_page_config(page_title="中壢家商，衛愛而生", layout="wide", page_icon="🧹")
+st.set_page_config(page_title="抄襲是不對的行為", layout="wide", page_icon="🧹")
 
 # --- 2. 捕捉全域錯誤 ---
 try:
