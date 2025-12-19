@@ -33,7 +33,7 @@ st.set_page_config(page_title="抄襲是不對的行為", layout="wide", page_ic
     # ==========================================
     #TW_TZ = pytz.timezone('Asia/Taipei')
 
-    MAX_IMAGE_BYTES = 10 * 1024 * 1024  # 單檔圖片 10MB 上限
+MAX_IMAGE_BYTES = 10 * 1024 * 1024  # 單檔圖片 10MB 上限
     QUEUE_DB_PATH = "task_queue_v4_wal.db"
     
     # Google Sheet 網址
