@@ -121,7 +121,6 @@ def get_gspread_client():
                     print(f"❌ 讀取分頁 '{tab_name}' 失敗: {e}")
                     return None
         return None
-print("測試通過點")
 
     def upload_image_to_drive(file_obj, filename):
         def _upload_action():
@@ -155,7 +154,8 @@ print("測試通過點")
             return str(int(float(val))).strip()
         except: return str(val).strip()
 
-    
+print("test point")
+
     # ==========================================
     # 圖片暫存資料夾
     # ==========================================
