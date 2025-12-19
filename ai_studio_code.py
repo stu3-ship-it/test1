@@ -27,7 +27,7 @@ from datetime import timezone
 st.set_page_config(page_title="抄襲是不對的行為", layout="wide", page_icon="🌞")
 
 # --- 2. 捕捉全域錯誤 ---
-try:
+#try:
     # ==========================================
     # 0. 基礎設定與時區
     # ==========================================
@@ -1699,6 +1699,6 @@ try:
 
         else: st.error("密碼錯誤")
 
-except Exception as e:
-    st.error("❌ 系統發生未預期錯誤，請通知管理員。")
-    print(traceback.format_exc())
+#except Exception as e:
+#    st.error("❌ 系統發生未預期錯誤，請通知管理員。")
+#    print(traceback.format_exc())
