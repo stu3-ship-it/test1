@@ -184,17 +184,6 @@ def get_gspread_client():
         except:
             pass
 
-        conn.execute("""
-            CREATE TABLE IF NOT EXISTS task_queue (
-                id TEXT PRIMARY KEY,
-                task_type TEXT NOT NULL,
-                created_ts TEXT NOT NULL,
-                payload_json TEXT NOT NULL,
-                status TEXT NOT NULL,
-                attempts INTEGER NOT NULL DEFAULT 0,
-                last_error TEXT
-            )
-        """)
         conn.execute("CREATE INDEX IF NOT EXISTS idx_status_created ON task_queue (status, created_ts);")
         conn.commit()
         return conn
