@@ -37,16 +37,16 @@ try:
     QUEUE_DB_PATH = "task_queue_v4_wal.db"
     
     # Google Sheet 網址
-    SHEET_URL = "https://docs.google.com/spreadsheets/d/11BXtN3aevJls6Q2IR_IbT80-9XvhBkjbTCgANmsxqkg/edit"
+    SHEET_URL = "https://docs.google.com/spreadsheets/d/108HJ47lwEzHrJ7I0-olC3S-oMZBIF60-55fQClqjIBw/edit"
     
     SHEET_TABS = {
         "main": "main_data", 
         "settings": "settings",
-        "roster": "roster",
-        "inspectors": "inspectors",
+        "roster": "roster", #名冊
+        "inspectors": "inspectors", #檢驗員
         "duty": "duty",
         "teachers": "teachers",
-        "appeals": "appeals"
+        "appeals": "appeals" #上訴
     }
 
     EXPECTED_COLUMNS = [
