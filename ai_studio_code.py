@@ -154,7 +154,7 @@ def get_gspread_client():
             return str(int(float(val))).strip()
         except: return str(val).strip()
 
-print("test point")
+    print("test point")
 
     # ==========================================
     # 圖片暫存資料夾
