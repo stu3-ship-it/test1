@@ -18,6 +18,7 @@ from datetime import datetime, date, timedelta
 from datetime import timezone
 import pytz
 import gspread
+"""
 from oauth2client.service_account import ServiceAccountCredentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseUpload
@@ -177,3 +178,4 @@ try:
 except Exception as e:
     st.error("❌ 系統發生未預期錯誤，請通知管理員。")
     print(traceback.format_exc())
+    """
