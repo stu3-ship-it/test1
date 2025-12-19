@@ -34,20 +34,20 @@ st.set_page_config(page_title="抄襲是不對的行為", layout="wide", page_ic
     #TW_TZ = pytz.timezone('Asia/Taipei')
 
 MAX_IMAGE_BYTES = 10 * 1024 * 1024  # 單檔圖片 10MB 上限
-    QUEUE_DB_PATH = "task_queue_v4_wal.db"
+QUEUE_DB_PATH = "task_queue_v4_wal.db"
     
     # Google Sheet 網址
-    SHEET_URL = "https://docs.google.com/spreadsheets/d/108HJ47lwEzHrJ7I0-olC3S-oMZBIF60-55fQClqjIBw/edit"
+SHEET_URL = "https://docs.google.com/spreadsheets/d/108HJ47lwEzHrJ7I0-olC3S-oMZBIF60-55fQClqjIBw/edit"
     
-    SHEET_TABS = {
-        "main": "main_data", 
-        "settings": "settings",
-        "roster": "roster", #名冊
-        "inspectors": "inspectors", #檢驗員
-        "duty": "duty",
-        "teachers": "teachers",
-        "appeals": "appeals" #上訴
-    }
+SHEET_TABS = {
+    "main": "main_data", 
+    "settings": "settings",
+    "roster": "roster", #名冊
+    "inspectors": "inspectors", #檢驗員
+    "duty": "duty",
+    "teachers": "teachers",
+    "appeals": "appeals" #上訴
+}
 
     EXPECTED_COLUMNS = [
         "日期", "週次", "班級", "評分項目", "檢查人員",
