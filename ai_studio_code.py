@@ -234,17 +234,7 @@ def get_gspread_client():
         with _queue_lock:
             try:
                 cur = conn.cursor()
-                cur.execute(
-                    """
-                    SELECT id, task_type, created_ts, payload_json, status, attempts, last_error
-                    FROM task_queue
-                    WHERE status IN ('PENDING', 'RETRY')
-                    AND attempts < ?
-                    ORDER BY created_ts ASC
-                    LIMIT 1
-                    """,
-                    (max_attempts,)
-                )
+                
                 row = cur.fetchone()
                 
                 if not row:
@@ -543,9 +533,9 @@ def get_gspread_client():
         return df[EXPECTED_COLUMNS]
 
     def load_full_semester_data_for_export():
-        """
-        [SRE] 期末結算專用：一次讀取 Google Sheet 所有資料。
-        """
+        
+        # [SRE] 期末結算專用：一次讀取 Google Sheet 所有資料。 
+        
         ws = get_worksheet(SHEET_TABS["main"])
         if not ws:
             return pd.DataFrame(columns=EXPECTED_COLUMNS)
