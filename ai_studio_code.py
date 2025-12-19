@@ -59,49 +59,28 @@ APPEAL_COLUMNS = [
     "申訴日期", "班級", "違規日期", "違規項目", "原始扣分", "申訴理由", "佐證照片", "處理狀態", "登錄時間", "對應紀錄ID"
 ]
 
-print("測試通過點")
-    
-    # ==========================================
-    # SRE Utils: Retry & Backoff Wrapper
-    # ==========================================
-    def execute_with_retry(func, max_retries=5, base_delay=1.0):
-        for attempt in range(max_retries):
-            try:
-                time.sleep(0.3 + random.uniform(0, 0.2)) 
-                return func()
-            except Exception as e:
-                error_str = str(e).lower()
-                is_retryable = any(x in error_str for x in ['429', '500', '503', 'quota', 'rate limit', 'timed out', 'connection'])
-                
-                if is_retryable and attempt < max_retries - 1:
-                    sleep_time = (base_delay * (2 ** attempt)) + random.uniform(0, 1)
-                    print(f"⚠️ API 忙碌 ({e})，第 {attempt+1} 次重試，等待 {sleep_time:.2f}秒...")
-                    time.sleep(sleep_time)
-                else:
-                    raise e
+# ==========================================
+# 1. Google 連線整合
+# ==========================================
 
-    # ==========================================
-    # 1. Google 連線整合
-    # ==========================================
+@st.cache_resource
+def get_credentials():
+    scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+    if "gcp_service_account" not in st.secrets:
+        st.error("❌ 找不到 secrets 設定")
+        return None
+    creds_dict = dict(st.secrets["gcp_service_account"])
+    return ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 
-    @st.cache_resource
-    def get_credentials():
-        scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-        if "gcp_service_account" not in st.secrets:
-            st.error("❌ 找不到 secrets 設定")
-            return None
-        creds_dict = dict(st.secrets["gcp_service_account"])
-        return ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
-
-    @st.cache_resource
-    def get_gspread_client():
-        try:
-            creds = get_credentials()
-            if not creds: return None
-            return gspread.authorize(creds)
-        except Exception as e:
-            st.error(f"❌ Google Sheet 連線失敗: {e}")
-            return None
+@st.cache_resource
+def get_gspread_client():
+    try:
+        creds = get_credentials()
+        if not creds: return None
+        return gspread.authorize(creds)
+    except Exception as e:
+        st.error(f"❌ Google Sheet 連線失敗: {e}")
+        return None
 
     @st.cache_resource
     def get_drive_service():
