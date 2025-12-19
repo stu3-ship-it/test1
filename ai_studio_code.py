@@ -25,7 +25,7 @@ from datetime import timezone
 
 # --- 1. 網頁設定 ---
 st.set_page_config(page_title="抄襲是不對的行為", layout="wide", page_icon="🌞")
-
+print("test start point")
 # --- 2. 捕捉全域錯誤 ---
 #try:
     # ==========================================
