@@ -154,12 +154,14 @@ try:
             return str(int(float(val))).strip()
         except: return str(val).strip()
 
+"""
+    
     # ==========================================
     # 圖片暫存資料夾
     # ==========================================
     IMG_DIR = "evidence_photos"
     os.makedirs(IMG_DIR, exist_ok=True)
-"""
+
     # ==========================================
     # SQLite 背景佇列系統 (SRE Hardened + ThreadPool)
     # ==========================================
