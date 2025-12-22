@@ -307,6 +307,9 @@ try:
         cap = 60.0
         return random.uniform(1.0, min(cap, base * (2 ** max(0, attempts))))
 
+st.error("測試線")
+print(traceback.format_exc())
+
     # ==========================================
     # 3. 主程式介面
     # ==========================================
@@ -355,5 +358,4 @@ except Exception as e:
     st.error("❌ 系統發生未預期錯誤，請通知管理員。")
     print(traceback.format_exc())  
 
-st.error("測試線")
-print(traceback.format_exc())
+
