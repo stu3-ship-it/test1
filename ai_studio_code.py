@@ -159,7 +159,7 @@ try:
     # ==========================================
     IMG_DIR = "evidence_photos"
     os.makedirs(IMG_DIR, exist_ok=True)
-
+"""
     # ==========================================
     # SQLite 背景佇列系統 (SRE Hardened + ThreadPool)
     # ==========================================
@@ -181,17 +181,6 @@ try:
         except:
             pass
 
-        conn.execute("""
-            CREATE TABLE IF NOT EXISTS task_queue (
-                id TEXT PRIMARY KEY,
-                task_type TEXT NOT NULL,
-                created_ts TEXT NOT NULL,
-                payload_json TEXT NOT NULL,
-                status TEXT NOT NULL,
-                attempts INTEGER NOT NULL DEFAULT 0,
-                last_error TEXT
-            )
-        """)
         conn.execute("CREATE INDEX IF NOT EXISTS idx_status_created ON task_queue (status, created_ts);")
         conn.commit()
         return conn
@@ -306,9 +295,7 @@ try:
         base = 2.0
         cap = 60.0
         return random.uniform(1.0, min(cap, base * (2 ** max(0, attempts))))
-
-st.error("測試線")
-print(traceback.format_exc())
+"""
 
     # ==========================================
     # 3. 主程式介面
@@ -357,5 +344,3 @@ print(traceback.format_exc())
 except Exception as e:
     st.error("❌ 系統發生未預期錯誤，請通知管理員。")
     print(traceback.format_exc())  
-
-
