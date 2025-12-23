@@ -85,10 +85,10 @@ try:
     @st.cache_resource
     def get_credentials():
         scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-        if "gcp_service_account" not in st.secrets:
+        if "GCP_SERVICE_ACCOUNT" not in st.secrets:
             st.error("❌ 找不到 secrets 設定")
             return None
-        creds_dict = dict(st.secrets["gcp_service_account"])
+        creds_dict = dict(st.secrets["GCP_SERVICE_ACCOUNT"])
         return ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 
     @st.cache_resource
