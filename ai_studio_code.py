@@ -1003,8 +1003,8 @@ try:
     now_tw = datetime.now(TW_TZ)
     today_tw = now_tw.date()
 
-    st.sidebar.title("🏫 功能選單")
-    app_mode = st.sidebar.radio("請選擇模式", ["糾察底家👀", "班級負責人🥸", "組長ㄉ窩💃"])
+    st.sidebar.title("功能選單")
+    app_mode = st.sidebar.radio("請選擇模式", ["衛生糾察", "班級情形", "系統管理"])
 
     with st.sidebar.expander("🔧 系統連線診斷", expanded=False):
         if get_gspread_client(): 
@@ -1023,7 +1023,7 @@ try:
             st.warning("⚠️ 未設定 Drive 資料夾 ID")
                 
     # --- 模式1: 糾察評分 ---
-    if app_mode == "糾察底家👀":
+    if app_mode == "衛生糾察👀":
         st.title("📝 衛生糾察評分系統")
         if "team_logged_in" not in st.session_state: st.session_state["team_logged_in"] = False
         
@@ -1234,7 +1234,7 @@ try:
                                 st.rerun()
 
     # --- 模式2: 衛生股長 ---
-    elif app_mode == "班級負責人🥸":
+    elif app_mode == "班級情形":
         st.title("🔎 班級成績查詢")
         df = load_main_data()
         
@@ -1345,7 +1345,7 @@ try:
                     st.info("🎉 最近沒有違規紀錄，尼們班很讚！")
 
     # --- 模式3: 後台 ---
-    elif app_mode == "組長ㄉ窩💃":
+    elif app_mode == "系統管理":
         st.title("⚙️ 管理後台")
         
         # [SRE] 監控面板
