@@ -37,7 +37,7 @@ try:
     QUEUE_DB_PATH = "task_queue_v4_wal.db"
     
     # Google Sheet 網址
-    SHEET_URL = "https://docs.google.com/spreadsheets/d/108HJ47lwEzHrJ7I0-olC3S-oMZBIF60-55fQClqjIBw/edit"
+    SHEET_URL = "https://docs.google.com/spreadsheets/d/2PACX-1vSHsXmf5kLoyWWS066ZgPurnBFwDyJmx9VtjGiDYAuh_FPfkyYzvwB0Akxi2X0DF1Kq3iQFf5a0R8nm/edit"
     
     SHEET_TABS = {
         "main": "main_data", 
