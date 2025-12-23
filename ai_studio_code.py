@@ -87,6 +87,7 @@ try:
         scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
         if "gcp_service_account" not in st.secrets:
             st.error("❌ 找不到 secrets 設定")
+            st.error("gcp_service_account")
             return None
         creds_dict = dict(st.secrets["gcp_service_account"])
         return ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
