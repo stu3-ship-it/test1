@@ -82,7 +82,8 @@ try:
     # 1. Google 連線整合
     # ==========================================
 
-    st.write('Hello World')
+    #st.write('Hello World')
+    st.write(gcp_service_account)
     
     @st.cache_resource
     def get_credentials():
