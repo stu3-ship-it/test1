@@ -83,7 +83,7 @@ try:
     # ==========================================
 
     #st.write('Hello World')
-    st.write(st.secrets["gcp_service_account"])
+    st.write(st.secrets["test_api"])
     
     @st.cache_resource
     def get_credentials():
