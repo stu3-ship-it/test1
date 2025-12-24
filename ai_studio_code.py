@@ -83,7 +83,8 @@ try:
     # ==========================================
 
     #st.write('Hello World')
-    #st.write(st.secrets["test_api"])
+    test_words = st.secrets["test_api"]
+    st.write(test_words)
     
     @st.cache_resource
     def get_credentials():
