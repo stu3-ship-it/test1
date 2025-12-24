@@ -83,7 +83,7 @@ try:
     # ==========================================
 
     #st.write('Hello World')
-    test_words = st.secrets["test_api"]
+    test_words = "test_api"
     st.write(test_words)
     
     @st.cache_resource
