@@ -84,7 +84,7 @@ try:
     
     @st.cache_resource
     def get_credentials():
-        scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+        scope = ["https://spreadsheets.google.com/feeds","https://www.googleapis.com/auth/drive"]
         if "gcp_service_account" not in st.secrets:
             st.error("❌ 找不到 secrets 設定")
             return None
