@@ -81,10 +81,6 @@ try:
     # ==========================================
     # 1. Google 連線整合
     # ==========================================
-
-    #st.write('Hello World')
-    test_words = "test_api"
-    st.write(test_words)
     
     @st.cache_resource
     def get_credentials():
