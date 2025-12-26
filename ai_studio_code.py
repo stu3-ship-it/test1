@@ -95,7 +95,6 @@ try:
     def get_gspread_client():
         try:
             creds = get_credentials()
-            st.write(creds)
             if not creds: return None
             return gspread.authorize(creds)
         except Exception as e:
