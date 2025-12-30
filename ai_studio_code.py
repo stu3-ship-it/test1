@@ -834,7 +834,7 @@ try:
             structured = []
             for c in sorted_all:
                 grade_val = get_sort_key(c)[0]
-                g_label = f"{grade_val}年級" if grade_val != 99 else "其他"
+                g_label = f"{grade_val}年級" if grade_val != 99 else "其他1"
                 structured.append({"grade": g_label, "name": c})
                 
             return sorted_all, structured
