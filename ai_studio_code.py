@@ -981,7 +981,7 @@ try:
     # ==========================================
     # 3. 主程式介面
     # ==========================================
-    SYSTEM_CONFIG = load_settings()
+    SYSTEM_CONFIG = load_settings()    #抓取開學日期
     ROSTER_DICT = load_roster_dict()
     INSPECTOR_LIST = load_inspector_list()
     TEACHER_MAILS = load_teacher_emails()
