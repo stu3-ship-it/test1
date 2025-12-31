@@ -1023,7 +1023,7 @@ try:
             st.warning("⚠️ 未設定 Drive 資料夾 ID")
                 
     # --- 模式1: 糾察評分 ---
-    if app_mode == "衛生糾察👀":
+    if app_mode == "衛生糾察":
         st.title("📝 衛生糾察評分系統")
         if "team_logged_in" not in st.session_state: st.session_state["team_logged_in"] = False
         
