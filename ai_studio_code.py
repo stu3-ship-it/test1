@@ -1204,6 +1204,7 @@ try:
                             
                             is_fix = st.checkbox("🚩 這是修正單 (上一筆輸錯，這筆重key才要按)", key=f"fix_{selected_class}")
                             files = st.file_uploader("📸 違規照片 (若有扣分則必填)", accept_multiple_files=True, key=f"file_{selected_class}")
+                            print(files)
                             
                             st.write("") 
 
