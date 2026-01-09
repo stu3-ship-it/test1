@@ -369,7 +369,7 @@ try:
                 filenames = payload.get("filenames", []) or []
                 drive_links = []
 
-                for path, fname in zip(image_paths, filenames):
+                for path, fname in zip(image_paths, filenames):   #上傳檔案的路徑及檔名
                     if not path or not os.path.exists(path):
                         drive_links.append("UPLOAD_FAILED")
                         continue
