@@ -368,7 +368,9 @@ try:
                 image_paths = payload.get("image_paths", []) or []
                 filenames = payload.get("filenames", []) or []
                 drive_links = []
-
+                st.write(image_paths)
+                st.write(filenames)
+                
                 for path, fname in zip(image_paths, filenames):   #上傳檔案的路徑及檔名
                     if not path or not os.path.exists(path):
                         drive_links.append("UPLOAD_FAILED")
@@ -1204,7 +1206,7 @@ try:
                             
                             is_fix = st.checkbox("🚩 這是修正單 (上一筆輸錯，這筆重key才要按)", key=f"fix_{selected_class}")
                             files = st.file_uploader("📸 違規照片 (若有扣分則必填)", accept_multiple_files=True, key=f"file_{selected_class}")
-                            st.write(files)
+                            
                             st.write("") 
 
                             if st.form_submit_button("🚀 送出評分", width="stretch"):
