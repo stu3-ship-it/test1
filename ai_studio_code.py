@@ -155,6 +155,8 @@ try:
             file = service.files().create(
                 body=file_metadata, media_body=media, fields='id', supportsAllDrives=True
             ).execute(num_retries=1)
+            st.write(filename)
+            st.write(folder_id)
             
             try:
                 service.permissions().create(fileId=file.get('id'), body={'role': 'reader', 'type': 'anyone'}).execute()
