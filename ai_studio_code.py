@@ -370,14 +370,14 @@ try:
                 drive_links = []
 
                 
-                for path, fname in zip(image_paths, filenames):   #上傳檔案的路徑及檔名
+                for path, fname in zip(image_paths, filenames):   #上傳檔案的路徑及檔名 filenames=日期&班級&序號
                     if not path or not os.path.exists(path):
                         drive_links.append("UPLOAD_FAILED_375")
                         continue
                     with open(path, "rb") as f:
                         link = upload_image_to_drive(f, fname)
                     #drive_links.append(link if link else "UPLOAD_FAILED_379")
-                    drive_links=filenames
+                    drive_links=image_paths
 
                 if drive_links:
                     entry["照片路徑"] = ";".join(drive_links)
