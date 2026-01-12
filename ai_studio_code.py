@@ -155,8 +155,6 @@ try:
             file = service.files().create(
                 body=file_metadata, media_body=media, fields='id', supportsAllDrives=True
             ).execute(num_retries=1)
-            st.write(filename)
-            st.write(folder_id)
             
             try:
                 service.permissions().create(fileId=file.get('id'), body={'role': 'reader', 'type': 'anyone'}).execute()
@@ -378,7 +376,8 @@ try:
                         continue
                     with open(path, "rb") as f:
                         link = upload_image_to_drive(f, fname)
-                    drive_links.append(link if link else "UPLOAD_FAILED_379")
+                    drive_links.append(image_paths)
+                    #drive_links.append(link if link else "UPLOAD_FAILED_379")
 
                 if drive_links:
                     entry["照片路徑"] = ";".join(drive_links)
@@ -640,9 +639,6 @@ try:
                 logical_fname = f"{new_entry['日期']}_{safe_class}_{i}.jpg"
                 tmp_fname = f"{datetime.now(TW_TZ).strftime('%Y%m%d%H%M%S')}_{uuid.uuid4().hex[:6]}_{logical_fname}"
                 local_path = os.path.join(IMG_DIR, tmp_fname)
-
-                st.write(logical_fname)
-                st.write(local_path)
 
                 try:
                     with open(local_path, "wb") as f:
