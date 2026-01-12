@@ -368,16 +368,15 @@ try:
                 image_paths = payload.get("image_paths", []) or []
                 filenames = payload.get("filenames", []) or []
                 drive_links = []
-                st.write(image_paths)
-                st.write(filenames)
+
                 
                 for path, fname in zip(image_paths, filenames):   #上傳檔案的路徑及檔名
                     if not path or not os.path.exists(path):
-                        drive_links.append("UPLOAD_FAILED")
+                        drive_links.append("UPLOAD_FAILED_375")
                         continue
                     with open(path, "rb") as f:
                         link = upload_image_to_drive(f, fname)
-                    drive_links.append(link if link else "UPLOAD_FAILED")
+                    drive_links.append(link if link else "UPLOAD_FAILED_379")
 
                 if drive_links:
                     entry["照片路徑"] = ";".join(drive_links)
