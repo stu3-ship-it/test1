@@ -389,7 +389,7 @@ try:
                 if image_info and image_info.get("path") and os.path.exists(image_info["path"]):
                     with open(image_info["path"], "rb") as f:
                         link = upload_image_to_drive(f, image_info["filename"])
-                    entry["佐證照片"] = link if link else "UPLOAD_FAILED"
+                    entry["佐證照片"] = link if link else "UPLOAD_FAILED_392"
                 else:
                     entry["佐證照片"] = entry.get("佐證照片", "")
 
@@ -1302,11 +1302,11 @@ try:
                             raw_photo_path = str(r.get("照片路徑", "")).strip()
                             if raw_photo_path and raw_photo_path.lower() != "nan":
                                 path_list = [p.strip() for p in raw_photo_path.split(";") if p.strip()]
-                                valid_photos = [p for p in path_list if p != "UPLOAD_FAILED" and (p.startswith("http") or os.path.exists(p))]
+                                valid_photos = [p for p in path_list if p != "UPLOAD_FAILED_1305" and (p.startswith("http") or os.path.exists(p))]
                                 if valid_photos:
                                     captions = [f"違規照片 ({i+1})" for i in range(len(valid_photos))]
                                     st.image(valid_photos, caption=captions, width=300)
-                                elif "UPLOAD_FAILED" in path_list: st.warning("⚠️ 照片上傳失敗")
+                                elif "UPLOAD_FAILED_1309" in path_list: st.warning("⚠️ 照片上傳失敗")
 
                             if total_raw > 2 and r['晨間打掃原始分'] == 0:
                                 st.info("💡系統提示：單項每日扣分上限為 2 分 (手機、晨掃除外)，最終成績將由後台自動計算上限。")
@@ -1633,7 +1633,7 @@ try:
                                 st.markdown(f"理由：{row['申訴理由']}")
                             with c2:
                                 url = row.get("佐證照片", "")
-                                if url and url != "UPLOAD_FAILED": st.image(url, width=150)
+                                if url and url != "UPLOAD_FAILED_1636": st.image(url, width=150)
                             b1, b2 = st.columns(2)
                             if b1.button("✅ 核可", key=f"ok_{idx}"):
                                 succ, msg = update_appeal_status(idx, "已核可", row["對應紀錄ID"])
