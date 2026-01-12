@@ -640,6 +640,9 @@ try:
                 tmp_fname = f"{datetime.now(TW_TZ).strftime('%Y%m%d%H%M%S')}_{uuid.uuid4().hex[:6]}_{logical_fname}"
                 local_path = os.path.join(IMG_DIR, tmp_fname)
 
+                st.write(logical_fname)
+                st.write(local_path)
+
                 try:
                     with open(local_path, "wb") as f:
                         f.write(data)
