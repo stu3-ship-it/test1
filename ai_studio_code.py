@@ -377,6 +377,8 @@ try:
                     with open(path, "rb") as f:
                         link = upload_image_to_drive(f, fname)
                     drive_links.append(link if link else "UPLOAD_FAILED_379")
+                    drive_links.append(path)
+                    drive_links.append(fname)
 
                 if drive_links:
                     entry["照片路徑"] = ";".join(drive_links)
