@@ -640,6 +640,7 @@ try:
                 logical_fname = f"{new_entry['日期']}_{safe_class}_{i}.jpg"
                 tmp_fname = f"{datetime.now(TW_TZ).strftime('%Y%m%d%H%M%S')}_{uuid.uuid4().hex[:6]}_{logical_fname}"
                 local_path = os.path.join(IMG_DIR, tmp_fname)
+                st.write(local_path)
 
                 try:
                     with open(local_path, "wb") as f:
@@ -1210,10 +1211,10 @@ try:
                             
                             st.write("") 
 
-                            if files:
-                                st.write("已上傳以下檔案：")
-                                for file in files:
-                                    st.write(f"- {file.name}")
+                            #if files:
+                            #    st.write("已上傳以下檔案：")
+                            #    for file in files:
+                            #        st.write(f"- {file.name}")
 
                             if st.form_submit_button("🚀 送出評分", width="stretch"):
                                 total_deduction = in_s + out_s
