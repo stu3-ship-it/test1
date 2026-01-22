@@ -1210,6 +1210,11 @@ try:
                             
                             st.write("") 
 
+                            if files:
+                                st.write("已上傳以下檔案：")
+                                for file in files:
+                                    st.write(f"- {file.name}")
+
                             if st.form_submit_button("🚀 送出評分", width="stretch"):
                                 total_deduction = in_s + out_s
                                 
