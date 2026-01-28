@@ -867,7 +867,7 @@ try:
     @st.cache_data(ttl=21600)
     def load_inspector_list():
         ws = get_worksheet(SHEET_TABS["inspectors"])
-        default = [{"label": "測試人員", "allowed_roles": ["內掃檢查"], "assigned_classes": [], "id_prefix": "測"}]
+        default = [{"label": "測試人員", "allowed_roles": ["內掃檢查"], "assigned_classes": [], "id_prefix": "測1"}]
         if not ws: return default
         try:
             df = pd.DataFrame(ws.get_all_records())
