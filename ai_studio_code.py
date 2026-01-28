@@ -42,11 +42,11 @@ try:
     SHEET_TABS = {
         "main": "main_data", 
         "settings": "settings",
-        "roster": "roster",
-        "inspectors": "inspectors",
-        "duty": "duty",
+        "roster": "roster",            #班級名冊
+        "inspectors": "inspectors",    #衛糾名單
+        "duty": "duty",                #責任區
         "teachers": "teachers",
-        "appeals": "appeals"
+        "appeals": "appeals"            #申訴清冊
     }
 
     EXPECTED_COLUMNS = [
