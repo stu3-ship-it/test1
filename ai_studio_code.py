@@ -377,8 +377,6 @@ try:
                     with open(path, "rb") as f:
                         link = upload_image_to_drive(f, fname)
                     drive_links.append(link if link else "UPLOAD_FAILED_379")
-                    drive_links.append(image_paths)
-                    drive_links.append(filenames)
 
                 if drive_links:
                     entry["照片路徑"] = ";".join(drive_links)
@@ -1211,10 +1209,10 @@ try:
                             
                             st.write("") 
 
-                            #if files:
-                            #    st.write("已上傳以下檔案：")
-                            #    for file in files:
-                            #        st.write(f"- {file.name}")
+                            if files:                        #補充上的，顯示上傳的檔案名稱。
+                                st.write("已上傳以下檔案：")
+                                for file in files:
+                                    st.write(f"- {file.name}")
 
                             if st.form_submit_button("🚀 送出評分", width="stretch"):
                                 total_deduction = in_s + out_s
