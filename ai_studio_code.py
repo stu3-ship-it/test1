@@ -157,7 +157,7 @@ try:
             ).execute(num_retries=1)
             
             try:
-                service.permissions().create(fileId=file.get('id'), body={'role': 'reader', 'type': 'anyone'}).execute()
+                service.permissions().create(fileId=file.get('id'), body={'role': 'reader', 'type': 'anyone'},supportsAllDrives=True).execute()
             except: pass 
             return f"https://drive.google.com/thumbnail?id={file.get('id')}&sz=w1000"
 
