@@ -1044,8 +1044,7 @@ try:
         
         if st.session_state["team_logged_in"]:
             prefixes = sorted(list(set([p["id_prefix"] for p in INSPECTOR_LIST])))
-            #prefix_labels = [f"{p}開頭" for p in prefixes]
-            prefix_labels = []
+            prefix_labels = [f"{p}" for p in prefixes]
             if not prefix_labels: st.warning("找不到糾察名單，請通知老師在後台建立名單 (Sheet: inspectors)。")
             else:
                 selected_prefix_label = st.radio("步驟 1：選擇年級", prefix_labels, horizontal=True)
